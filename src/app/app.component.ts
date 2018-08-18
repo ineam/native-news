@@ -6,7 +6,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
-  templateUrl: 'app.html'
+  template: `
+    <ion-nav [root]="rootPage"></ion-nav>
+  `
 })
 export class MyApp {
   rootPage:any = TabsPage;
