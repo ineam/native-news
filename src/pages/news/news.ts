@@ -19,7 +19,7 @@ import {Data} from "../../types/data.type";
 
     <ion-content>
       <!-- TODO : implement radio group to choose country and category-->
-      
+
       <ion-card *ngFor="let article of data.articles">
         <img [src]="article.urlToImage"/>
         <ion-card-content>
