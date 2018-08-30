@@ -69,14 +69,13 @@ export class NewsPage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.newsService.fetchData('us', 'sport').subscribe(
-      data => (this.data = data) && console.log(data)
+    this.newsService.fetchData('fr', 'sport').subscribe(
+      data => this.data = data
     );
   }
 
   editSearch(): void {
     this.isEditForm = !this.isEditForm;
-    console.log(this.isEditForm)
   }
 
   changeEditView(): void {
@@ -102,7 +101,7 @@ export class NewsPage implements OnInit {
     }
 
     this.newsService.fetchData(country, category).subscribe(
-      data => (this.data = data) && console.log(data)
+      data => this.data = data
     );
 
     this.isEditForm = false;
