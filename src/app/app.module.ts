@@ -19,6 +19,9 @@ import {rootReducer} from "../state-management/root.reducer";
 import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
+// Sandbox
+import {AppSandbox} from "./app.sandbox";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -46,6 +49,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     TabsPage
   ],
   providers: [
+    AppSandbox,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
