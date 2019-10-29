@@ -14,6 +14,14 @@ import {SingleArticlePage} from "../pages/single-article/single-article";
 import {NewsProvider} from '../providers/news/news';
 import {HttpClientModule} from "@angular/common/http";
 
+// Redux
+import {rootReducer} from "../state-management/root.reducer";
+import {StoreModule} from "@ngrx/store";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+
+// Sandbox
+import {AppSandbox} from "./app.sandbox";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +34,10 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    // Redux
+    StoreModule.forRoot(rootReducer),
+    StoreDevtoolsModule.instrument()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,6 +49,7 @@ import {HttpClientModule} from "@angular/common/http";
     TabsPage
   ],
   providers: [
+    AppSandbox,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
